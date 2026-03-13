@@ -1,23 +1,103 @@
-### 1. Admin User Stories
-<b>Admins manage the overall system, users, and data integrity.</b><br>
-As an Admin, I want to add new doctors and patients to the system, so that the clinic database remains up-to-date.
-As an Admin, I want to assign roles and permissions, so that users have appropriate access levels.
-As an Admin, I want to view all appointments, so that I can monitor clinic operations.
-As an Admin, I want to generate reports on appointments, users, and prescriptions, so that I can analyze clinic performance.
-As an Admin, I want to remove or deactivate users, so that inactive or inappropriate accounts do not access the system.
+# Smart Clinic Management System - User Stories
 
-### 2. Patient User Stories
-<b>Patients interact mainly with scheduling and personal health information.</b> <br>
-As a Patient, I want to register and create a profile, so that I can book appointments.
-As a Patient, I want to view available doctors and appointment slots, so that I can choose a convenient time.
-As a Patient, I want to book, reschedule, or cancel appointments, so that I can manage my healthcare efficiently.
-As a Patient, I want to view my medical history and prescriptions, so that I can track my health records.
-As a Patient, I want to receive notifications/reminders for upcoming appointments, so that I don’t miss them.
+---
 
-### 3. Doctor User Stories
-<b>Doctors manage schedules, patient care, and availability.</b> <br>
-As a Doctor, I want to view my daily and weekly appointment schedule, so that I can plan my work.
-As a Doctor, I want to update my availability, so that patients can only book slots that I can attend.
-As a Doctor, I want to view patient records and medical history, so that I can provide informed care.
-As a Doctor, I want to add prescriptions and medical notes for patients, so that treatment information is accurately recorded.
-As a Doctor, I want to receive notifications when patients book or cancel appointments, so that I can adjust my schedule.
+## Admin User Stories
+
+### Title:
+_As an Admin, I want to add new doctors and patients to the system, so that the clinic database remains up-to-date._
+
+**Acceptance Criteria:**
+1. Admin can create a new doctor account with name, specialty, and contact information.
+2. Admin can create a new patient account with name, contact info, and health info.
+3. The system validates required fields and prevents duplicate emails.
+
+**Priority:** High  
+**Story Points:** 5  
+**Notes:**
+- Should log creation actions for audit purposes.
+- Handle email format validation.
+
+---
+
+### Title:
+_As an Admin, I want to assign roles and permissions, so that users have appropriate access levels._
+
+**Acceptance Criteria:**
+1. Admin can assign roles: Doctor, Patient, or Admin.
+2. Admin can modify permissions for specific system modules.
+3. Changes are logged for audit and security purposes.
+
+**Priority:** High  
+**Story Points:** 4  
+**Notes:**
+- Include role-based access control (RBAC) enforcement.
+- Avoid giving Admin rights to non-admin users by mistake.
+
+---
+
+## Patient User Stories
+
+### Title:
+_As a Patient, I want to register and create a profile, so that I can book appointments._
+
+**Acceptance Criteria:**
+1. Patient can sign up with name, email, password, and basic health info.
+2. System validates input and prevents duplicate registrations.
+3. Confirmation email is sent upon successful registration.
+
+**Priority:** High  
+**Story Points:** 3  
+**Notes:**
+- Include password strength validation.
+- Handle email verification edge cases.
+
+---
+
+### Title:
+_As a Patient, I want to book an appointment with a doctor, so that I can receive care at a convenient time._
+
+**Acceptance Criteria:**
+1. Patient can select a doctor and available time slot.
+2. System confirms the booking and updates the doctor’s schedule.
+3. Patient receives a confirmation notification.
+
+**Priority:** High  
+**Story Points:** 3  
+**Notes:**
+- Prevent double-booking for the same time slot.
+- Allow rescheduling within clinic rules.
+
+---
+
+## Doctor User Stories
+
+### Title:
+_As a Doctor, I want to view my daily and weekly appointment schedule, so that I can plan my work._
+
+**Acceptance Criteria:**
+1. Doctor can see all upcoming appointments in a calendar view.
+2. Doctor can filter appointments by date or patient.
+3. System updates the schedule in real-time when patients book/cancel appointments.
+
+**Priority:** High  
+**Story Points:** 3  
+**Notes:**
+- Use calendar UI for better visualization.
+- Include real-time notifications for changes.
+
+---
+
+### Title:
+_As a Doctor, I want to add prescriptions for my patients, so that their treatment information is recorded accurately._
+
+**Acceptance Criteria:**
+1. Doctor can select a patient from their appointment list.
+2. Doctor can add prescription details (medicine name, dosage, duration).
+3. Prescription is stored in MongoDB and linked to the patient record.
+
+**Priority:** Medium  
+**Story Points:** 3  
+**Notes:**
+- Include optional notes for special instructions.
+- Allow edits only before patient acknowledgment.
