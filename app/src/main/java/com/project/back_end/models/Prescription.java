@@ -51,4 +51,6 @@ public class Prescription {
     public void setDosage(String dosage) { this.dosage = dosage; }
     public String getDoctorNotes() { return doctorNotes; }
     public void setDoctorNotes(String doctorNotes) { this.doctorNotes = doctorNotes; }
+
+
 }
